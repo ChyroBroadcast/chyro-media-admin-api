@@ -1,8 +1,10 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#
-##       Chyro API Model
-##       <support@chyro.tv>
+
+##		Chyro API Model
+##		Copyright (c) 2015:
+##			Chyro Conseil <support@chyro.tv>
+##			Licensed Under MIT license
 ##      Install Python Modules
 ##              - urllib / urllib2
 ##              - cookielib
@@ -29,7 +31,7 @@ class ChyroApi:
 		self.login = login
 		self.passwd = passwd
 		self.form = form
-	
+
 	def initAuth(self):
 		self.cj = cookielib.CookieJar()
 		self.opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(self.cj))
@@ -61,9 +63,3 @@ if __name__ == "__main__":
 	token = chyro.initAuth()
 	if token:
 		print chyro.searchApi('program', token, '{title=test}')
-
-
-
-
-		
-

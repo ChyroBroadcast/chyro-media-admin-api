@@ -1,9 +1,11 @@
 #!/usr/bin/php
 <?php
 /*
-*       Chyro API Model 
-*       <support@chyro.tv>
-*       Install PHP curl 
+*       Chyro API Model
+*				Copyright (c) 2015:
+*						Chyro Conseil <support@chyro.tv>
+*						Licensed Under MIT license
+*       Install PHP curl
 *               http://php.net/manual/en/book.curl.php
 */
 
@@ -55,7 +57,7 @@ class ChyroApi {
 }
 
 /*
-	2 - Main : example 	
+	2 - Main : example
 */
 $api = new ChyroApi($url, $login, $passwd, $output_format);
 $token = $api->auth();

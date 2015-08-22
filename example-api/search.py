@@ -1,12 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-#
-##       Chyro API Model
-##       <support@chyro.tv>
-##	Install Python Modules
-##		- urllib / urllib2
-##		- cookielib
-##		- simplejson
+
+##		Chyro API Model
+##      Copyright (c) 2015:
+##			Chyro Conseil <support@chyro.tv>
+##			Licensed Under MIT license
+##      Install Python Modules
+##		    - urllib / urllib2
+##		    - cookielib
+##		    - simplejson
 import urllib, urllib2, cookielib
 import simplejson,os,sys
 

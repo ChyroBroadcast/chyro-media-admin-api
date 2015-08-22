@@ -1,10 +1,12 @@
 #!/usr/bin/php
 <?php
 /*
-*	Chyro API Model	
-*	<support@chyro.tv>
-* 	Install PHP curl 
-*		http://php.net/manual/en/book.curl.php
+*				Chyro API Model
+*				Copyright (c) 2015:
+*						Chyro Conseil <support@chyro.tv>
+*						Licensed Under MIT license
+* 			Install PHP curl
+*						http://php.net/manual/en/book.curl.php
 */
 
 
@@ -18,7 +20,7 @@ $login = 'LOGIN'; // Login with API read/write
 $passwd = 'PASS'; // Password
 
 
-/* 
+/*
 	1 - Authentificate
 */
 $cookie = tempnam ("/tmp", "CURLCOOKIE");
@@ -28,8 +30,8 @@ curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
 $output = curl_exec ($ch);
 print $output.PHP_EOL;
 
-/* 
-	2 - Query	
+/*
+	2 - Query
 */
 $ch = curl_init("http://".$url."/api/search/program/format/json?query={title=test}&token=".$output);
 curl_setopt ($ch, CURLOPT_COOKIEFILE, $cookie);
