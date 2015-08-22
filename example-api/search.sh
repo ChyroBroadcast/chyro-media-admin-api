@@ -1,7 +1,7 @@
 #!/bin/bash
 ##
 ##      Chyro API Model
-##      <support@chyro.fr>
+##      <support@chyro.tv>
 ##	Install WGet
 ## 
  

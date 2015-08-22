@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 ##       Chyro API Model
-##       <support@chyro.fr>
+##       <support@chyro.tv>
 ##      Install Python Modules
 ##              - urllib / urllib2
 ##              - cookielib

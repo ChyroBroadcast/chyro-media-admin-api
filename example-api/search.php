@@ -2,7 +2,7 @@
 <?php
 /*
 *	Chyro API Model	
-*	<support@chyro.fr>
+*	<support@chyro.tv>
 * 	Install PHP curl 
 *		http://php.net/manual/en/book.curl.php
 */
