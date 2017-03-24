@@ -1,7 +1,7 @@
 # Chyro SDK
 # Should work with Python 2 & 3
 #
-# Copyright (C) 2016:
+# Copyright (C) 2017:
 #       Chyro Conseil <support@chyro.tv>
 #       License: MIT
 #
@@ -26,7 +26,7 @@ class Error(Exception):
     pass
 
 class Chyro(object):
-    def __init__(self, host, user, password, log=False):
+    def __init__(self, host, user, password, bc=1, log=False):
         self.log = log
         cj = cookielib.CookieJar()
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cj))
@@ -44,6 +44,7 @@ class Chyro(object):
         self.token = token
         self.host = host
         self.cj = cj
+	self.bc = bc
 
     def _make_url(self, module, resource, form='json'):
         host = self.host
@@ -60,8 +61,10 @@ class Chyro(object):
         return json.loads(res.read().decode('utf-8'))['data']
 
     def get(self, resource, **filters):
+	bc = str(self.bc)
         url = self._make_url('get', resource)
         url += '?' + urlencode(filters)
+        url += '&broadcast=' + bc
         opener = self.opener
         if self.log: print('GET ' + url)
         res = opener.open(url)
@@ -78,9 +81,10 @@ class Chyro(object):
         res = self.opener.open(url + '?' + qs)
         return res.read()
 
-    def playlist(self, iso_day, bc, norm):
+    def playlist(self, iso_date, norm):
+	bc = self.bc
         url = self._make_url('export', 'daily', norm)
-        url += '?begin={iso_day}&bc={bc}'.format(**locals())
+        url += '?begin={iso_date}&bc={bc}'.format(**locals())
         res = self.opener.open(url)
         return res.read()
 
@@ -96,5 +100,3 @@ def print_json(data):
                      sort_keys=True,
                      indent=2,
                      separators=(',', ': ')))
-
-
